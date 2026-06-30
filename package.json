@@ -1,0 +1,28 @@
+{
+  "name": "melodix",
+  "version": "1.0.0",
+  "description": "Melodix — a desktop music player with library, playlists, and drag-and-drop import",
+  "main": "src/main.js",
+  "author": "You",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "music-metadata": "^7.14.0"
+  },
+  "build": {
+    "appId": "com.yourname.melodix",
+    "productName": "Melodix",
+    "directories": { "output": "release" },
+    "files": ["src/**/*", "package.json"],
+    "mac": { "category": "public.app-category.music", "target": ["dmg"] },
+    "win": { "target": ["nsis"] },
+    "linux": { "target": ["AppImage"], "category": "Audio" }
+  }
+}
